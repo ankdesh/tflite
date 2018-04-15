@@ -1,7 +1,8 @@
 import tensorflow as tf
 
 
-model_file = "xorGate.pb"
+#model_file = "xorGate.pb"
+model_file = "frozen_graph/frozen_model.pb"
 
 def load_graph(pbmodelFile):
     with tf.gfile.GFile(pbmodelFile, "rb") as f:

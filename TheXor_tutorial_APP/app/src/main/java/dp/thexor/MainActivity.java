@@ -47,9 +47,11 @@ public class MainActivity extends AppCompatActivity {
         xor_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               float n1 = nPicker1.getValue();
-               float n2 = nPicker2.getValue();
-               float[][] inp=new float[][]{{n1,n2}};
+               float n1 = 1.0f;
+               float n2 = 1.0f;
+               float[][] inp=new float[1][2];//{{n1,n2}};
+                for (float[] row : inp)
+                    java.util.Arrays.fill(row ,1.0f);
                float[][] out=new float[][]{{0}};
                 tflite.run(inp,out);
                result_tv.setText(String.valueOf(Math.round(out[0][0])));
